@@ -1,3 +1,4 @@
+require 'rubygems'
 require 'rake'
 require 'rake/testtask'
 require 'rake/rdoctask'
@@ -8,6 +9,7 @@ namespace :sqlserver do
   ['sqlserver','sqlserver_odbc'].each do |adapter|
 
     Rake::TestTask.new("test_#{adapter}") do |t|
+      ENV['BUNDLE_GEMFILE'] = File.expand_path('../../../../rails/Gemfile', __FILE__)
       t.libs << "test" 
       t.libs << "test/connections/native_#{adapter}"
       t.libs << "../../../rails/activerecord/test/"

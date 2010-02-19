@@ -1,6 +1,7 @@
 require 'active_record'
 require 'active_record/connection_adapters/abstract_adapter'
 require 'active_record/connection_adapters/sqlserver_adapter/core_ext/active_record'
+require 'active_support/core_ext/kernel/requires'
 require 'base64'
 
 module ActiveRecord
