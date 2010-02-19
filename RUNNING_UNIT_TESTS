@@ -1,3 +1,47 @@
+
+== Misc new notes.
+
+Clone rails.
+
+$ cd ~/repos
+$ git clone git@github.com:rails/rails.git
+
+
+Clone the SQL Server adapter.
+
+$ cd ~/repos
+$ git clone git@github.com:rails-sqlserver/2000-2005-adapter.git sqlserver_adapter
+
+
+Make a new rails project, link in adapter and rails edge.
+
+$ cd ~/repos
+$ rails sqlserver_project
+$ cd sqlserver_project
+$ ln -s ~/repos/rails vendor/rails
+$ ln -s ~/repos/sqlserver_adapter vendor/plugins/sqlserver_adapter
+
+
+Optionally link ActiveRecord's test models to the test project (optional)
+
+$ cd ~/repos/sqlserver_project/app
+$ rm -rf models
+$ ln -s ~/repos/rails/activerecord/test/models
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 == Creating the test database
 
 The default names for the test databases are "activerecord_unittest" and 
